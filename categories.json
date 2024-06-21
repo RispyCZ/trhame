@@ -1,0 +1,27 @@
+[
+  {
+    "title": "🧄 Česnek",
+    "subtitle": "Běžná přísada v mnoha pokrmech, známá svou silnou chutí a aromatem.",
+    "slug": "cesnek"
+  },
+  {
+    "title": "🍓 Jahody",
+    "subtitle": "Lahodné a sladké, jahody jsou oblíbeným ovocem mnoha lidí.",
+    "slug": "jahody"
+  },
+  {
+    "title": "🧅 Cibule",
+    "subtitle": "Cibule dodává výraznou chuť a aroma různým pokrmům.",
+    "slug": "cibule"
+  },
+  {
+    "title": "🥔 Brambory",
+    "subtitle": "Brambory jsou univerzální základní potravinou, používanou v mnoha kuchyních.",
+    "slug": "brambory"
+  },
+  {
+    "title": "🥒 Okurky",
+    "subtitle": "Okurky jsou osvěžující a často se používají do salátů a nakládaných okurek.",
+    "slug": "okurky"
+  }
+]
