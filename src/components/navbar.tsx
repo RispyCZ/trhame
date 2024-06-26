@@ -5,14 +5,8 @@ import Link from 'next/link'
 import React, { FC, useEffect, useState } from 'react'
 
 const Navbar: FC = () => {
-  const [location, setLocation] = useState<GeolocationCoordinates | null>(null)
-  useEffect(() => {
-    if ('geolocation' in navigator) {
-      navigator.geolocation.getCurrentPosition((pos) => setLocation(pos.coords))
-    }
-  }, [])
   return (
-    <div>
+    <>
       <div className='p-5 flex justify-between'>
         <Link href='/'>
           <h1 className="font-extrabold text-2xl">Vegio.co</h1>
@@ -27,7 +21,7 @@ const Navbar: FC = () => {
           <Link className="text-lg mx-2 border-transparent border rounded-2xl p-3 hover:border-black" href="/search">Find Places</Link>
         </div>
       </nav>
-    </div>
+    </>
   )
 }
 
