@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Sluneční statek",
+    "description": "Sluneční statek je malebná farma zaměřená na pěstování slunečnic a dalších květin. Farma se nachází na kopci, kde slunce svítí po většinu dne, což zajišťuje bohatou úrodu."
+  },
+  {
+    "name": "Zelený dvůr",
+    "description": "Zelený dvůr je ekologická farma specializující se na pěstování zeleniny a bylinek. Farma klade důraz na udržitelné zemědělské praktiky a nabízí čerstvé produkty přímo ze dvora."
+  },
+  {
+    "name": "Jabloňový ranč",
+    "description": "Jabloňový ranč je rodinná farma s rozsáhlými sady jabloní. Nabízí návštěvníkům možnost sběru jablek, domácí jablečné šťávy a mnoho dalších produktů z jablek."
+  },
+  {
+    "name": "Modrá louka",
+    "description": "Modrá louka je farma známá pro své levandulové pole, které v létě rozkvétá do nádherných odstínů modré a fialové. Farma vyrábí levandulové oleje, mýdla a další produkty."
+  },
+  {
+    "name": "Větrný vrch",
+    "description": "Větrný vrch je farma situovaná na kopci, kde větry pomáhají sušit seno a obilí. Farma se specializuje na chov ovcí a produkci kvalitní vlny."
+  },
+  {
+    "name": "Lískový háj",
+    "description": "Lískový háj je farma s rozsáhlými lískovými plantážemi. Farma se zaměřuje na produkci lískových oříšků, které jsou známé svou vynikající chutí a kvalitou."
+  },
+  {
+    "name": "Zlatá pole",
+    "description": "Zlatá pole je farma zasazená uprostřed rozlehlých obilných polí. Farma produkuje různé druhy obilí a nabízí exkurze zaměřené na tradiční zemědělství."
+  },
+  {
+    "name": "Bylinkový dům",
+    "description": "Bylinkový dům je malá rodinná farma specializující se na pěstování bylin. Farma nabízí širokou škálu sušených bylin, čajů a bylinných produktů."
+  },
+  {
+    "name": "Třešňový sad",
+    "description": "Třešňový sad je oblíbená destinace pro milovníky třešní. Farma nabízí možnost samosběru třešní a vyrábí různé třešňové produkty, včetně džemů a šťáv."
+  },
+  {
+    "name": "Lesní farma",
+    "description": "Lesní farma je unikátní místo zaměřené na udržitelné lesnictví a chov lesní zvěře. Farma nabízí vzdělávací programy a exkurze do okolních lesů."
+  }
+]

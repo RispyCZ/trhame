@@ -1,0 +1,82 @@
+[
+  {
+    "title": "🧄 Garlic",
+    "subtitle": "A common ingredient in many dishes, known for its strong flavor and aroma.",
+    "slug": "garlic"
+  },
+  {
+    "title": "🍓 Strawberries",
+    "subtitle": "Delicious and sweet, strawberries are a favorite fruit of many.",
+    "slug": "strawberries"
+  },
+  {
+    "title": "🧅 Onion",
+    "subtitle": "Onions add a distinctive flavor and aroma to various dishes.",
+    "slug": "onion"
+  },
+  {
+    "title": "🥔 Potatoes",
+    "subtitle": "Potatoes are a versatile staple food used in many cuisines.",
+    "slug": "potatoes"
+  },
+  {
+    "title": "🥒 Cucumbers",
+    "subtitle": "Cucumbers are refreshing and often used in salads and pickles.",
+    "slug": "cucumbers"
+  },
+  {
+    "title": "🍎 Apples",
+    "subtitle": "Crisp and juicy, apples are popular for eating fresh or making cider.",
+    "slug": "apples"
+  },
+  {
+    "title": "🍅 Tomatoes",
+    "subtitle": "Versatile in many dishes, tomatoes can be picked fresh from the vine.",
+    "slug": "tomatoes"
+  },
+  {
+    "title": "🍇 Grapes",
+    "subtitle": "Sweet and juicy, grapes are commonly picked for eating or making wine.",
+    "slug": "grapes"
+  },
+  {
+    "title": "🌽 Corn",
+    "subtitle": "A staple grain, corn is often picked fresh for its sweet, plump kernels.",
+    "slug": "corn"
+  },
+  {
+    "title": "🍑 Peaches",
+    "subtitle": "Soft, sweet, and juicy, peaches are ideal for fresh eating or baking.",
+    "slug": "peaches"
+  },
+  {
+    "title": "🍒 Cherries",
+    "subtitle": "Cherries are loved for their bright red color and sweet flavor.",
+    "slug": "cherries"
+  },
+  {
+    "title": "🫐 Blueberries",
+    "subtitle": "Tiny but packed with flavor, blueberries are great for snacking and desserts.",
+    "slug": "blueberries"
+  },
+  {
+    "title": "🥬 Lettuce",
+    "subtitle": "A leafy green staple, lettuce is perfect for salads.",
+    "slug": "lettuce"
+  },
+  {
+    "title": "🥕 Carrots",
+    "subtitle": "Crunchy and nutritious, carrots can be enjoyed raw or cooked.",
+    "slug": "carrots"
+  },
+  {
+    "title": "🎃 Pumpkins",
+    "subtitle": "Large and versatile, pumpkins are a favorite for carving and cooking.",
+    "slug": "pumpkins"
+  },
+  {
+    "title": "🫛 Peas",
+    "subtitle": "Sweet and tender, peas are a delightful addition to many dishes.",
+    "slug": "peas"
+  }
+]

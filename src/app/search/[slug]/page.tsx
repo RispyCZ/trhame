@@ -1,53 +1,61 @@
-import { Button } from '@/components/base/button'
 import React, { FC } from 'react'
-import Categories from '../../../../categories.json'
+import Link from 'next/link'
+import { fetchQuery } from 'convex/nextjs'
+import { api } from '../../../../convex/_generated/api'
+import { Globe, MapPinArea, MapPin } from '@phosphor-icons/react/dist/ssr'
 
-const SearchCategory: FC<{ params: { slug: string } }> = ({ params }) => {
-
-  const category = Categories.find((item) => item.slug === params.slug)
-
+const SearchLayout: FC<{ params: { slug: string } }> = async ({ params }) => {
+  const categories = await fetchQuery(api.categories.get)
+  const currentCategory = categories.find((item) => item.slug === params.slug)
+  if (!currentCategory) return
+  const places = await fetchQuery(api.places.get, { category: currentCategory.slug })
   return (
-    <div className='p-10'>
-      {/* Section Top */}
-      <div className="text-center p-12">
-        <h1 className='font-black text-4xl'>{category?.title}</h1>
-        <h2 className='text-lg'>{category?.subtitle}</h2>
+    <div className='grid gap-4 grid-cols-[20%_1fr] min-h-svh'>
+      <div className='shadow-xl rounded-2xl p-10'>
+        {/* Sidebar */}
+        <h3 className="text-lg font-bold text-center my-5">Categories</h3>
+        <div className="flex flex-col justify-center items-center">
+          {categories.map((item, index) => {
+            const { slug, title } = item
+            return (
+              <Link
+                key={index}
+                className={`${slug === params.slug ? 'border-b-black' : 'border-b-transparent'} text-xl my-2 border-b-2 hover:border-b-black`}
+                href={slug}>
+                {title}
+              </Link>
+            )
+          })}
+        </div>
       </div>
-      <hr className='border-2 border-gray-300' />
 
-      <div className='flex flex-col p-12'>
-        <div className='my-4 shadow-xl p-5'>
-          <h3 className='font-bold text-4xl'>Farma1</h3>
-          <p className='text-xl my-4'>Lorem Ipsum</p>
-          <div className='bg-green-500 text-white font-extrabold max-w-xs text-center my-6 rounded-full p-5'>
-            <p>🕔 Otevřeno: 10:00-17:00</p>
-          </div>
-          <Button>Více informací</Button>
+      <div className='shadow-xl'>
+        {/* Section Top */}
+        <div className="text-center p-12">
+          <h1 className='font-black text-4xl'>{currentCategory?.title}</h1>
+          <h2 className='text-lg'>{currentCategory?.subtitle}</h2>
         </div>
-        <div className='my-4 shadow-xl p-5'>
-          <h3 className='font-bold text-4xl'>Farma2</h3>
-          <p className='text-xl my-4'>Lorem Ipsum</p>
-          <div className='bg-green-500 text-white font-extrabold max-w-xs text-center my-6 rounded-full p-5'>
-            <p>🕔 Otevřeno: 10:00-17:00</p>
-          </div>
-          <Button>Více informací</Button>
-        </div>
-        <div className='my-4 shadow-xl p-5'>
-          <h3 className='font-bold text-4xl'>Farma3</h3>
-          <p className='text-xl my-4'>Lorem Ipsum</p>
-          <div className='flex items-center gap-4'>
-            <div className='bg-green-500 border-2 border-black text-white font-extrabold max-w-xs text-center my-6 rounded-full p-5'>
-              <p>🕔 Otevřeno: 10:00-17:00</p>
-            </div>
-            <div className='bg-blue-500 border-2 border-black text-white font-extrabold max-w-xs text-center my-6 rounded-full p-5'>
-              <p>Cena: od 100Kč/KG</p>
-            </div>
-          </div>
-          <Button>Více informací</Button>
+        <hr className='border-2 border-gray-300' />
+        <div className='flex flex-col p-12'>
+          {places.length == 0 ? <p className='font-semibold'>No places in category was found.</p> : <></>}
+          {places.map((place, index) => {
+            const { location, name, description, googleLinkUrl, websiteUrl } = place
+            return (
+              <div key={index} className='flex flex-col gap-4 shadow-lg p-5'>
+                <h1 className='text-4xl font-black'>{name}</h1>
+                <p className='text-sm'>{description}</p>
+                <p className='font-bold flex items-center'><MapPinArea weight='fill' size={32}/> {location}</p>
+                <div className='flex py-5 gap-4'>
+                  <Link className='bg-emerald-500 hover:bg-emerald-600 delay-300 ease-linear px-12 py-4 rounded-2xl text-white flex gap-2 items-center' href={googleLinkUrl}><MapPin weight='fill' size={32} /> Google Maps Link</Link>
+                  <Link className='bg-emerald-500 hover:bg-emerald-600 delay-300 ease-linear px-12 py-4 rounded-2xl text-white flex gap-2 items-center' href={websiteUrl}><Globe weight='fill' size={32} /> Website</Link>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
   )
 }
 
-export default SearchCategory
+export default SearchLayout

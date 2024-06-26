@@ -1,29 +1,24 @@
-import React from 'react'
-import Categories from '../../../categories.json'
+import React, { FC } from 'react'
 import Link from 'next/link'
-const SearchPage = () => {
+import { api } from '../../../convex/_generated/api'
+import { fetchQuery } from 'convex/nextjs'
 
+const SearchPage: FC = async () => {
+  const categories = await fetchQuery(api.categories.get)
+  if (!categories) return
   return (
-    <div className='p-20'>
-      {/* Section Top */}
-      <div className="text-center p-12">
-        <h1 className='font-black text-4xl'>Co si chcete dnes natrhat?</h1>
-      </div>
-      <hr className='border-2 border-gray-300' />
-
-      <div className='grid grid-cols-3 gap-4 items-center justify-center my-10'>
-        {Categories.map((item, index) => {
-          return (
-            <div className='shadow-xl p-10 rounded-xl text-center' key={index}>
-              <Link
-                href={`/search/${item.slug}`}
-                className='text-2xl font-bold border-b-2 border-b-transparent hover:border-b-black'>
-                {item.title}
-              </Link>
-            </div>
-          )
-        })}
-      </div>
+    <div className='grid grid-cols-3 gap-4 items-center justify-center my-10 px-10'>
+      {categories.map((item, index) => {
+        return (
+          <div className='shadow-xl p-10 rounded-xl text-center' key={index}>
+            <Link
+              href={`/search/${item.slug}`}
+              className='text-2xl font-bold border-b-2 border-b-transparent hover:border-b-black'>
+              {item.title}
+            </Link>
+          </div>
+        )
+      })}
     </div>
   )
 }
